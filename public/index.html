@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlogSpace | Share your story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">✍️ BlogSpace</a>
+    <nav>
+      <button id="homeBtn" class="nav-link">Home</button>
+      <button id="loginNav" class="nav-link">Login</button>
+      <button id="registerNav" class="btn btn-small">Register</button>
+      <button id="logoutBtn" class="nav-link hidden">Logout</button>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR SPACE TO SHARE</p>
+      <h1>Ideas worth <span>sharing.</span></h1>
+      <p class="hero-subtitle">Write stories, share what you learn, and join the conversation.</p>
+      <button id="writeHeroBtn" class="btn">＋ Write a post</button>
+    </section>
+
+    <section id="authSection" class="panel hidden">
+      <div class="panel-heading"><h2 id="authTitle">Welcome back</h2><p id="authSubtitle">Log in to continue writing.</p></div>
+      <form id="authForm">
+        <div id="nameField" class="field hidden"><label for="name">Name</label><input id="name" autocomplete="name" placeholder="Your name"></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required></div>
+        <button class="btn full-width" id="authSubmit" type="submit">Login</button>
+      </form>
+      <p id="authSwitch" class="switch-copy">New here? <button id="switchMode" class="text-button">Create an account</button></p>
+    </section>
+
+    <section id="editorSection" class="panel hidden">
+      <div class="panel-heading"><h2 id="editorTitle">Create a post</h2><p>Put your thoughts into words.</p></div>
+      <form id="postForm">
+        <div class="field"><label for="postTitle">Title</label><input id="postTitle" maxlength="160" placeholder="Give your story a title" required></div>
+        <div class="field"><label for="postContent">Your story</label><textarea id="postContent" rows="7" placeholder="Start writing here..." required></textarea></div>
+        <div class="actions"><button type="submit" class="btn">Publish post</button><button type="button" id="cancelEdit" class="btn btn-light">Cancel</button></div>
+      </form>
+    </section>
+
+    <section class="posts-heading"><div><p class="eyebrow">THE COMMUNITY</p><h2>Latest stories</h2></div><span id="postCount" class="count">Loading...</span></section>
+    <div id="message" class="message hidden" role="status"></div>
+    <section id="posts" class="posts-grid" aria-live="polite"></section>
+  </main>
+  <footer><span>✍️ BlogSpace</span><span>Made for curious minds.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
